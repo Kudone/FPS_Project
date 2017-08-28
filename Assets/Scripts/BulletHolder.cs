@@ -45,26 +45,20 @@ public class BulletHolder : RayController
 		string label = "Bullet : " + bullet  + "/30";
 		GUI.Label (new Rect (850, 410, 150, 80), label);
 
-		GUI.color = Color.red;
-
-		string label1 = "BulletBox:" + bulletbox;
-
-
-		GUI.Label (new Rect (850, 395, 150, 80), label1);
 	}
 
 	void Update ()
 	{
 		if (Input.GetKey (KeyCode.R)) {
 			if (bullet < 30) {
-				if (bulletDown <= 150) {
+				if (bulletDown <= 150 && bulletbox >= 1) {
 					ReroadSound.Play ();
 					bulletbox = 30;
 					bullet = bulletbox;
-				} else if (bulletDown > 150) {
+				} else if (bulletDown > 150 && bulletbox >= 1) {
 					ReroadSound.Play ();
 					bullet = 30 - bulletCount;
-				} else if (bulletDown >= 180) {
+				} else if (bulletDown >= 180 && bulletbox == 0) {
 					bullet = 0;
 				}
 				
