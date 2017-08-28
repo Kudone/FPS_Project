@@ -7,10 +7,11 @@ public class Score : MonoBehaviour {
 
 	public GameManager gameManager;
 
-	void  OnTriggerEnter (Collider other){
-		if(other.gameObject.tag == "Bullet"){
-		gameManager.score += 10;
+	void  OnTriggerEnter (Collider other)
+	{
+		if (other.gameObject.tag == "Bullet") {
+			gameManager.score += 10;
 			print ("hit");
+		}
 	}
-}
 }
